@@ -17,10 +17,7 @@ class ClientsPage extends StatefulWidget {
 
 class _ClientsPageState extends State<ClientsPage> {
   // List<ClientType> types = [
-  //   ClientType(name: 'Platinum', icon: Icons.credit_card),
-  //   ClientType(name: 'Golden', icon: Icons.card_membership),
-  //   ClientType(name: 'Titanium', icon: Icons.credit_score),
-  //   ClientType(name: 'Diamond', icon: Icons.diamond),
+  //  ,
   // ];
 
   @override
@@ -47,7 +44,7 @@ class _ClientsPageState extends State<ClientsPage> {
                   iconColor: Colors.indigo,
                 ),
                 onDismissed: (direction) {
-                  list.clients.removeAt(index);
+                  list.remove(index);
                 },
               );
             },
@@ -133,7 +130,7 @@ class _ClientsPageState extends State<ClientsPage> {
                 return TextButton(
                     child: const Text("Salvar"),
                     onPressed: () async {
-                      list.clients.add(Client(
+                      list.add(Client(
                           name: nomeInput.text,
                           email: emailInput.text,
                           type: dropdownValue));
